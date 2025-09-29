@@ -1,28 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex Hellas Region</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+
 </head>
+
 <body>
-    <h1>
-        Pokedex Hellas Region
-    </h1>
-    <section class="section1">
-<h3>
-    INFO
-</h3>
-<p>
+    <section class="header">
+        <h1>Pokedex Hellas Region </h1>
+    </section> <!-- This closes the header -->
+    <div class="content-container">
+        <section class="section1">
+            <h3>Region Info</h3>
+            <div id="region-display">
+                <p>Click on a region to discover its Pokemon types!</p>
+            </div>
+        </section>
+        <section class="main-section">
+            <h3>Interactive Map</h3>
+            <h2>HELLAS</h2>
+            <div id="map-container">
+                <!-- p5.js canvas will appear here -->
+            </div>
+        </section>
 
-</p>
-    </section>
-<section class="Main Section">
-
-</section>
-
-<section class="section2">
-
-</section>
+        <section class="section2">
+            <h3>DISCOVERED</h3>
+            <div class="discovered-pokemon-box">
+                <div class="pokemon-entry">
+                    <span class="pokemon-badge all-types">ARCEUS<span class="region">Macedonia</span></span>
+                </div>
+                <div class="pokemon-entry">
+                    <span class="pokemon-badge fire-steel">HEATRAN<span class="region">Dodecanese</span></span>
+                </div>
+                <div class="pokemon-entry">
+                    <span class="pokemon-badge fire">RAPIDASH<span class="region">Epirus</span></span>
+                </div>
+                <div class="pokemon-entry">
+                    <span class="pokemon-badge normal">MEOWTH<span class="region">Attica</span></span>
+                </div>
+                <div class="pokemon-entry">
+                    <span class="pokemon-badge normal">TAUROS<span class="region">Crete</span></span>
+                </div>
+            </div>
+            <h4>Legend</h4>
+            <div class="legend-box">
+                <span class="type-badge normal">Normal</span>
+                <span class="type-badge fire">Fire</span>
+                <span class="type-badge water">Water</span>
+                <span class="type-badge electric">Electric</span>
+                <span class="type-badge grass">Grass</span>
+                <span class="type-badge ice">Ice</span>
+                <span class="type-badge fighting">Fighting</span>
+                <span class="type-badge poison">Poison</span>
+                <span class="type-badge ground">Ground</span>
+                <span class="type-badge flying">Flying</span>
+                <span class="type-badge psychic">Psychic</span>
+                <span class="type-badge bug">Bug</span>
+                <span class="type-badge rock">Rock</span>
+                <span class="type-badge ghost">Ghost</span>
+                <span class="type-badge dragon">Dragon</span>
+                <span class="type-badge dark">Dark</span>
+                <span class="type-badge steel">Steel</span>
+                <span class="type-badge fairy">Fairy</span>
+            </div>
+            <p class="collection-count">Found: 12/150</p>
+        </section>
+    </div> <!-- This closes the content container -->
+    <footer class="footer">
+        <h2>Μολὼν λαβέ</h2>
+        <p><em>"Ὁ τλῶν νικᾷ" (The one who endures wins) – Sophocles</em></p>
+    </footer>
+    <script src="sketch.js"></script>
 </body>
+
 </html>
