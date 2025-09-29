@@ -1,0 +1,82 @@
+{
+  "pokeData": [
+    {
+      "name": "Snorlax",
+      "types": "Normal",
+      "region": "Attica",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
+    },
+    {
+      "name": "Arbok",
+      "types": "Poison",
+      "region": "Peloponnese",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png"
+    },
+    {
+      "name": "Vikavolt",
+      "types": "Bug/Electric",
+      "region": "Sterea Ellas",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/738.png"
+    },
+    {
+      "name": "Celebi",
+      "types": "Psychic/Grass",
+      "region": "Thessaly",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/251.png"
+    },
+    {
+      "name": "Crabominable",
+      "types": "Fighting/Ice",
+      "region": "Epirus",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/740.png"
+    },
+    {
+      "name": "Absol",
+      "types": "Dark",
+      "region": "Macedonia",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png"
+    },
+    {
+      "name": "Granbull",
+      "types": "Fairy",
+      "region": "Thrace",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/210.png"
+    },
+    {
+      "name": "Dragonite",
+      "types": "Dragon/Flying",
+      "region": "North Aegean",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png"
+    },
+    {
+      "name": "Gengar",
+      "types": "Ghost",
+      "region": "South Aegean",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png"
+    },
+    {
+      "name": "Camerupt",
+      "types": "Fire/Ground",
+      "region": "Dodecanese",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/323.png"
+    },
+    {
+      "name": "Gigalith",
+      "types": "Rock",
+      "region": "Cyclades",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/526.png"
+    },
+    {
+      "name": "Copperajah",
+      "types": "Steel",
+      "region": "Crete",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/879.png"
+    },
+    {
+      "name": "Kyogre",
+      "types": "Water",
+      "region": "Ionian Islands",
+      "img": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/382.png"
+    }
+  ]
+}
