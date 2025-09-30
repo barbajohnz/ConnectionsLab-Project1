@@ -1,6 +1,5 @@
 let mapImg;
 let pokeData; // holds JSON data
-let regions = []; // holds region buttons
 //stores the matching colors of each associate type
 const colours = {
     normal: '#A8A77A',
@@ -23,7 +22,7 @@ const colours = {
     fairy: '#D685AD'
 };
 
-// Define where each button should be and its associated type
+// x & y coordinates for each region button and its associated type(s)
 let regionButtons = [
     { name: "Attica", x: 342, y: 307, type: "normal" },
     { name: "Peloponnese", x: 270, y: 359, type: "poison" },
@@ -41,14 +40,14 @@ let regionButtons = [
 ];
 
 function preload() {
-    // Load your map image (use PNG or SVG path)
+    // load the map image
     mapImg = loadImage('media/hellas-poke-map.png');
 }
 
 function setup() {
     console.log("Setup started");
 
-    // Fetch the Pokemon data
+    // fetch the JSON data
     fetch('pokedata.json')
         .then(response => {
             console.log("Fetch response received:", response);
@@ -62,10 +61,10 @@ function setup() {
             console.error("Error loading Pokemon data:", error);
         });
 
-    // Create canvas that fits in the map-container div
+    // creates canvas to fit inside the map-container div
     let canvas = createCanvas(750, 550);
     canvas.parent('map-container');
-    // Display the map to fit the canvas
+    // display the map image as the background
     image(mapImg, 0, 0, width, height);
 }
 
@@ -83,33 +82,34 @@ function draw() {
         stroke(0);
         strokeWeight(1);
 
-        // Check if button has one type or two types
         if (btn.types && btn.types.length === 2) {
-            // Dual type - draw split gradient
+            // Dual type - draw two half-rectangles
             let color1 = colours[btn.types[0]];
             let color2 = colours[btn.types[1]];
 
+            // Add transparency if not hovering
             if (!isHovering) {
                 color1 += '80';
                 color2 += '80';
             }
 
-            // Create gradient
-            let grad = drawingContext.createLinearGradient(
-                btn.x - 40, btn.y - 17.5,
-                btn.x + 40, btn.y + 17.5
-            );
-            grad.addColorStop(0, color1);
-            grad.addColorStop(0.5, color1);
-            grad.addColorStop(0.5, color2);
-            grad.addColorStop(1, color2);
-
-            drawingContext.fillStyle = grad;
             rectMode(CENTER);
-            rect(btn.x, btn.y, 80, 35, 8);
+
+            // Draw left half
+            fill(color1);
+            rect(btn.x - 20, btn.y, 40, 35, 8, 0, 0, 8); // Rounded on left side only
+
+            // Draw right half
+            fill(color2);
+            rect(btn.x + 20, btn.y, 40, 35, 0, 8, 8, 0); // Rounded on right side only
         } else {
-            // Single type - solid color
-            let typeColor = btn.type || btn.types[0];
+            // Get the color for single-type buttons
+            let typeColor;
+            if (btn.type) {
+                typeColor = btn.type;  // Single type
+            } else {
+                typeColor = btn.types[0];  // Use first type if dual-type
+            }
 
             if (isHovering) {
                 fill(colours[typeColor]);
@@ -130,13 +130,13 @@ function draw() {
 
 }
 function mousePressed() {
-    // Loop through each button to check if it was clicked
+    // loop through each region button to see if one was clicked
     for (let i = 0; i < regionButtons.length; i++) {
         let btn = regionButtons[i];
         let d = dist(mouseX, mouseY, btn.x, btn.y);
 
         if (d < 40) {
-            // Button was clicked!
+            // button was clicked
             console.log("Clicked on: " + btn.name);
             displayPokemonData(btn.name);
             return;
@@ -160,9 +160,9 @@ function displayPokemonData(regionName) {
 
         let regionDisplay = document.getElementById('region-display');
 
-        // Build the HTML content
+        // html content to show in section 1 of html 
         let htmlContent = '<h3>' + pokemon.name + '</h3>';
-        htmlContent += '<h4>Region:' + regionName + '</h4>';
+        htmlContent += '<h4>Region: ' + regionName + '</h4>';
         htmlContent += '<img src="' + pokemon.img + '" alt="' + pokemon.name + '">';
         htmlContent += '<p>Type: ' + pokemon.types + '</p>';
 
