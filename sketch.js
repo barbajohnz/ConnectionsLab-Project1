@@ -154,7 +154,7 @@ function displayPokemonData(regionName) {
         }
     }
 
-    // step 2: if found display it
+    // step 2: if found display it in section 1 of html
     if (pokemon) {
         console.log("Found Pokemon:", pokemon);
 
