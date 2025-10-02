@@ -1,5 +1,5 @@
 let mapImg;
-let pokeData; // holds JSON data
+let pokeData; //  JSON data
 //stores the matching colors of each associate type
 const colours = {
     normal: '#A8A77A',
@@ -83,11 +83,11 @@ function draw() {
         strokeWeight(1);
 
         if (btn.types && btn.types.length === 2) {
-            // Dual type - draw two half-rectangles
+            // Dual type  two half-rectangles
             let color1 = colours[btn.types[0]];
             let color2 = colours[btn.types[1]];
 
-            // Add transparency if not hovering
+            //  transparency if not hovering
             if (!isHovering) {
                 color1 += '80';
                 color2 += '80';
@@ -95,15 +95,15 @@ function draw() {
 
             rectMode(CENTER);
 
-            // Draw left half
+            //  left half
             fill(color1);
             rect(btn.x - 20, btn.y, 40, 35, 8, 0, 0, 8); // Rounded on left side only
 
-            // Draw right half
+            //  right half
             fill(color2);
             rect(btn.x + 20, btn.y, 40, 35, 0, 8, 8, 0); // Rounded on right side only
         } else {
-            // Get the color for single-type buttons
+            // color for single-type buttons
             let typeColor;
             if (btn.type) {
                 typeColor = btn.type;  // Single type
